@@ -1,9 +1,19 @@
 from english_words import get_english_words_set
 
+def print_words():
+    print(f'The other words are')
+    for word in final_aw:
+        print(word)
+
 all_words = list(get_english_words_set(['web2']))
 
-all_spelling_bee = ['a','l','f','o','e','p','g']
+#Set primary equal to required letter. There is always only 1.
 primary = 'o'
+#Set the below equal to the non-primary letters. There should always be 7.
+all_spelling_bee = ['a','l','f','o','e','p','g']
+all_spelling_bee.append(primary)
+
+
 letters = ['a','b','c',
            'd','e','f',
            'g','h','i',
@@ -30,7 +40,9 @@ for letter in all_spelling_bee:
 counter = len(pg)
 if len(pg) == 1:
     print(f'The panogram is {pg[0]}')
+    print_words()
 elif len(pg) > 1:
     print(f'The panograms are {pg}')
+    print_words()
 elif len(pg) == 0:
-    print("They ain't got a panny")
+    print_words()
